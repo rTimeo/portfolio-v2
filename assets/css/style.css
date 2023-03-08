@@ -1,0 +1,108 @@
+header .text, header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header .text span, header .text p:nth-child(2), header .text p:nth-child(1), header nav a {
+  text-shadow: 1px 3px 11px rgba(0, 0, 0, 0.55);
+}
+
+header .text p:nth-child(1), header nav a {
+  font-family: "Poppins", sans-serif;
+}
+
+header .text p:nth-child(2) {
+  font-family: "Roboto Mono", monospace;
+}
+
+header nav li:nth-child(3) a::before, header nav li:nth-child(2) a::before, header nav li:nth-child(1) a::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+body {
+  background-color: #1A1D2A;
+}
+
+body::-webkit-scrollbar {
+  width: 0px;
+}
+
+header {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.0705882353) 50%, #1A1D2A 100%), url(../images/fond.jpg);
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+header nav {
+  position: fixed;
+  right: 0;
+  left: 0;
+  height: 100px;
+}
+header nav ul {
+  display: flex;
+  gap: 30px;
+}
+header nav li {
+  position: relative;
+  height: 45px;
+  display: flex;
+  align-items: center;
+}
+header nav a {
+  color: white;
+  font-size: 1.6rem;
+}
+header nav li:nth-child(1) a::before {
+  content: "01";
+}
+header nav li:nth-child(2) a::before {
+  content: "02";
+}
+header nav li:nth-child(3) a::before {
+  content: "03";
+}
+header .text {
+  height: 70%;
+  flex-direction: column;
+}
+header .text p:nth-child(1) {
+  font-size: 10vw;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  color: white;
+}
+header .text p:nth-child(2) {
+  font-size: 1.2vw;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2px;
+  color: white;
+}
+header .text span {
+  color: blue;
+  font-size: 1.2vw;
+  filter: brightness(150%);
+}
+header img {
+  height: 20px;
+  object-fit: cover;
+  filter: invert(63%) sepia(22%) saturate(381%) hue-rotate(187deg) brightness(88%) contrast(87%);
+}
+
+/*# sourceMappingURL=style.css.map */
