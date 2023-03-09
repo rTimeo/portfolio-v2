@@ -22,11 +22,10 @@ header{
     background: linear-gradient(180deg,#00000012 50%,$first-color 100%),
     url(../images/fond.jpg);
     height: 100vh;
-
+    width: 100vw;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-
 
     nav{
     position: fixed;
@@ -43,8 +42,7 @@ header{
 
         li{
             position: relative;
-            height: 45px;
-
+            
             display: flex;
             align-items: center;
         }
@@ -54,7 +52,13 @@ header{
             @extend %text-shadow;
 
             color: white;
+            font-size: 1.8rem;
+        }
+
+        span{
+            margin-right: 10px;
             font-size: 1.6rem;
+            line-height: 60px;
         }
 
         li:nth-child(1) a::before{
@@ -70,6 +74,17 @@ header{
         li:nth-child(3) a::before{
             content: "03" ;
             @extend %header-Link-Before;
+        }
+
+        li:nth-child(4) a::before{
+            content: "04" ;
+            @extend %header-Link-Before;
+        }
+
+        a.active{
+            color : $second-color;
+            transition: 0.15s;
+            transform: scale(1.2);
         }
     }
     .text{
@@ -102,14 +117,124 @@ header{
         span{
             color : $second-color;
             font-size: 1.2vw;
-            filter: brightness(150%);
             @extend %text-shadow;
         }
     }
-    img{
-        height: 20px;
-        object-fit: cover;
-        filter: invert(63%) sepia(22%) saturate(381%) hue-rotate(187deg) brightness(88%) contrast(87%);
+
+}
+
+main{
+    
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 10px;
+
+    section:nth-child(1){
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        height: 100vh;
+        padding-top: 150px;
+
+        .title{
+            display: flex;
+            margin-bottom: 50px;
+            
+
+            h2{
+                color: white;
+                @extend %first-font;
+                text-transform: uppercase;
+                font-size: 7rem;
+                margin-right: 5px;
+                position: relative;
+                @extend %text-shadow;
+                white-space: nowrap; /* empêche le texte de passer à la ligne */
+            }
+
+            h2::after{
+                transition: all 0.1s ease-in-out;
+                content: "";
+                position: absolute;
+                bottom: 13.5%;
+                z-index: -1;
+                height: 0.3em;
+                width: 104%;
+                left: -1%;
+                background: linear-gradient(180deg,#2C49D8   100%,#f3f3f3 100%, rgba(255, 209, 0, 0) 100%);
+                }   
+            }
+
+        
+
+        .text{
+            border: 5px solid white;
+            position: relative;
+            padding: 40px;
+
+            p{
+                color: white;
+                font-size: 3rem;
+                @extend %second-font;
+                line-height: 50px;
+
+                span{
+                    font-size: 3rem;
+                    color: $second-color;
+                    text-transform: uppercase;
+                }
+                
+            }
+
+            p::before{
+                content: "<h3>";
+                position: absolute;
+                opacity: 0.5;
+                top: 0;
+                left: 0;
+            }
+                
+            p::after{
+                content: "</h3>";
+                position: absolute;
+                opacity: 0.5;
+                bottom: 0;
+                left: 0;
+            }
+
+            hr{
+                position: absolute;
+                width: 2px;
+                height: 60%;
+                left: 15px;
+                top: 20%;
+                
+                opacity: 0.5;
+            }
+            
+        }
+
+
+            .vscode{
+                position: absolute;
+                left: 20%;
+                top: 320px;
+                img{
+                object-fit: cover;
+                height: 500px;
+                opacity: 0.2;
+            }
+        
+            }
+            
+    }
+
+    section:nth-child(2){
+        height: 100vh;
+    }
+
+    section:nth-child(3){
+        height: 100vh;
     }
 }
 

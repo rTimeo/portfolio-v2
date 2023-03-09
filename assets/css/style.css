@@ -1,26 +1,26 @@
+@charset "UTF-8";
 header .text, header nav {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-header .text span, header .text p:nth-child(2), header .text p:nth-child(1), header nav a {
+main section:nth-child(1) .title h2, header .text span, header .text p:nth-child(2), header .text p:nth-child(1), header nav a {
   text-shadow: 1px 3px 11px rgba(0, 0, 0, 0.55);
 }
 
-header .text p:nth-child(1), header nav a {
+main section:nth-child(1) .title h2, header .text p:nth-child(1), header nav a {
   font-family: "Poppins", sans-serif;
 }
 
-header .text p:nth-child(2) {
+main section:nth-child(1) .text p, header .text p:nth-child(2) {
   font-family: "Roboto Mono", monospace;
 }
 
-header nav li:nth-child(3) a::before, header nav li:nth-child(2) a::before, header nav li:nth-child(1) a::before {
+header nav li:nth-child(4) a::before, header nav li:nth-child(3) a::before, header nav li:nth-child(2) a::before, header nav li:nth-child(1) a::before {
   position: absolute;
-  top: 0;
   right: 0;
-  font-size: 0.8rem;
+  font-size: 1.25rem;
   opacity: 0.5;
 }
 
@@ -44,6 +44,7 @@ body::-webkit-scrollbar {
 header {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.0705882353) 50%, #1A1D2A 100%), url(../images/fond.jpg);
   height: 100vh;
+  width: 100vw;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -60,13 +61,17 @@ header nav ul {
 }
 header nav li {
   position: relative;
-  height: 45px;
   display: flex;
   align-items: center;
 }
 header nav a {
   color: white;
+  font-size: 1.8rem;
+}
+header nav span {
+  margin-right: 10px;
   font-size: 1.6rem;
+  line-height: 60px;
 }
 header nav li:nth-child(1) a::before {
   content: "01";
@@ -76,6 +81,14 @@ header nav li:nth-child(2) a::before {
 }
 header nav li:nth-child(3) a::before {
   content: "03";
+}
+header nav li:nth-child(4) a::before {
+  content: "04";
+}
+header nav a.active {
+  color: #64ffda;
+  transition: 0.15s;
+  transform: scale(1.2);
 }
 header .text {
   height: 70%;
@@ -95,14 +108,97 @@ header .text p:nth-child(2) {
   color: white;
 }
 header .text span {
-  color: blue;
+  color: #64ffda;
   font-size: 1.2vw;
-  filter: brightness(150%);
 }
-header img {
-  height: 20px;
+
+main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+main section:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100vh;
+  padding-top: 150px;
+}
+main section:nth-child(1) .title {
+  display: flex;
+  margin-bottom: 50px;
+}
+main section:nth-child(1) .title h2 {
+  color: white;
+  text-transform: uppercase;
+  font-size: 7rem;
+  margin-right: 5px;
+  position: relative;
+  white-space: nowrap; /* empêche le texte de passer à la ligne */
+}
+main section:nth-child(1) .title h2::after {
+  transition: all 0.1s ease-in-out;
+  content: "";
+  position: absolute;
+  bottom: 13.5%;
+  z-index: -1;
+  height: 0.3em;
+  width: 104%;
+  left: -1%;
+  background: linear-gradient(180deg, #2C49D8 100%, #f3f3f3 100%, rgba(255, 209, 0, 0) 100%);
+}
+main section:nth-child(1) .text {
+  border: 5px solid white;
+  position: relative;
+  padding: 40px;
+}
+main section:nth-child(1) .text p {
+  color: white;
+  font-size: 3rem;
+  line-height: 50px;
+}
+main section:nth-child(1) .text p span {
+  font-size: 3rem;
+  color: #64ffda;
+  text-transform: uppercase;
+}
+main section:nth-child(1) .text p::before {
+  content: "<h3>";
+  position: absolute;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+}
+main section:nth-child(1) .text p::after {
+  content: "</h3>";
+  position: absolute;
+  opacity: 0.5;
+  bottom: 0;
+  left: 0;
+}
+main section:nth-child(1) .text hr {
+  position: absolute;
+  width: 2px;
+  height: 60%;
+  left: 15px;
+  top: 20%;
+  opacity: 0.5;
+}
+main section:nth-child(1) .vscode {
+  position: absolute;
+  left: 20%;
+  top: 320px;
+}
+main section:nth-child(1) .vscode img {
   object-fit: cover;
-  filter: invert(63%) sepia(22%) saturate(381%) hue-rotate(187deg) brightness(88%) contrast(87%);
+  height: 500px;
+  opacity: 0.2;
+}
+main section:nth-child(2) {
+  height: 100vh;
+}
+main section:nth-child(3) {
+  height: 100vh;
 }
 
 /*# sourceMappingURL=style.css.map */
