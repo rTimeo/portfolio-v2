@@ -1,13 +1,12 @@
 
-
-
+// NAV BAR
 // Récupération de tous les liens de la barre de navigation
 const navLinks = document.querySelectorAll('nav ul li a');
 // Ajout d'un écouteur d'événement de défilement de page
 window.addEventListener('scroll', () => {
   // Pour chaque section de la page
     document.querySelectorAll('section').forEach(section => {
-        const sectionTop = section.offsetTop - 50; // Décalage de 50 pixels pour compenser la hauteur de la barre de navigation
+        const sectionTop = section.offsetTop - 150; // Décalage de 50 pixels pour compenser la hauteur de la barre de navigation
         const sectionHeight = section.offsetHeight;
 
         // Vérification si la section est visible à l'écran
