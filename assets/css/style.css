@@ -5,11 +5,11 @@ header .text, header nav {
   align-items: center;
 }
 
-main section:nth-child(1) .title h2, header .text span, header .text p:nth-child(2), header .text p:nth-child(1), header nav a {
+main section:nth-child(2) .title h3, main section:nth-child(1) .title h2, header .text span, header .text p:nth-child(2), header .text p:nth-child(1), header nav a {
   text-shadow: 1px 3px 11px rgba(0, 0, 0, 0.55);
 }
 
-main section:nth-child(1) .title h2, header .text p:nth-child(1), header nav a {
+main section:nth-child(2) .parent div p, main section:nth-child(2) .title h3, main section:nth-child(1) .title h2, header .text p:nth-child(1), header nav a {
   font-family: "Poppins", sans-serif;
 }
 
@@ -55,11 +55,11 @@ header nav {
   left: 0;
   z-index: 999; /* donner une valeur de z-index élevée pour placer le menu au-dessus du contenu */
   width: 100vw;
-  height: 100px;
+  height: 150px;
 }
 header nav ul {
   display: flex;
-  gap: 30px;
+  gap: 55px;
 }
 header nav li {
   position: relative;
@@ -67,7 +67,8 @@ header nav li {
   align-items: center;
 }
 header nav a {
-  color: white;
+  color: rgb(255, 255, 255);
+  transition: ease 0.3s;
   font-size: 1.8rem;
 }
 header nav span {
@@ -87,13 +88,8 @@ header nav li:nth-child(3) a::before {
 header nav li:nth-child(4) a::before {
   content: "04";
 }
-header nav a.active {
-  color: #64ffda;
-  transition: 0.15s;
-  transform: scale(1.2);
-}
 header .text {
-  height: 70%;
+  height: 90%;
   flex-direction: column;
 }
 header .text p:nth-child(1) {
@@ -123,8 +119,8 @@ main section:nth-child(1) {
   display: flex;
   flex-direction: column;
   position: relative;
-  height: 100vh;
-  padding-top: 150px;
+  height: 90vh;
+  padding-top: 110px;
 }
 main section:nth-child(1) .title {
   display: flex;
@@ -134,7 +130,6 @@ main section:nth-child(1) .title h2 {
   color: white;
   text-transform: uppercase;
   font-size: 7rem;
-  margin-right: 5px;
   position: relative;
   white-space: nowrap; /* empêche le texte de passer à la ligne */
 }
@@ -150,17 +145,17 @@ main section:nth-child(1) .title h2::after {
   background: linear-gradient(180deg, #2C49D8 100%, #f3f3f3 100%, rgba(255, 209, 0, 0) 100%);
 }
 main section:nth-child(1) .text {
-  border: 5px solid white;
+  border: 5px solid rgba(255, 255, 255, 0.146);
   position: relative;
-  padding: 100px 50px 100px 100px;
+  padding: 50px 50px 50px 100px;
 }
 main section:nth-child(1) .text p {
   color: white;
-  font-size: 2.5rem;
+  font-size: 2.1rem;
   line-height: 50px;
 }
 main section:nth-child(1) .text p span {
-  font-size: 3rem;
+  font-size: 2.1rem;
   color: #64ffda;
   text-transform: uppercase;
 }
@@ -190,18 +185,135 @@ main section:nth-child(1) .text hr {
   bottom: 25%;
   opacity: 0.1;
 }
-main section:nth-child(1) .vscode {
+main section:nth-child(1) img {
+  display: block;
   position: absolute;
-  left: 20%;
-  top: 320px;
-}
-main section:nth-child(1) .vscode img {
-  object-fit: cover;
-  height: 500px;
+  left: 26%;
+  top: 75%;
+  width: 50%;
   opacity: 0.2;
 }
 main section:nth-child(2) {
-  height: 100vh;
+  padding-top: 110px;
+}
+main section:nth-child(2) .title {
+  display: flex;
+  margin-bottom: 50px;
+}
+main section:nth-child(2) .title h3 {
+  color: white;
+  text-transform: uppercase;
+  font-size: 7rem;
+  position: relative;
+  white-space: nowrap; /* empêche le texte de passer à la ligne */
+}
+main section:nth-child(2) .title h3::after {
+  transition: all 0.1s ease-in-out;
+  content: "";
+  position: absolute;
+  bottom: 13.5%;
+  z-index: -1;
+  height: 0.3em;
+  width: 102%;
+  left: -1%;
+  background: linear-gradient(180deg, #d87f2c 100%, #f3f3f3 100%, rgba(255, 209, 0, 0) 100%);
+}
+main section:nth-child(2) .parent {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 30px;
+}
+main section:nth-child(2) .parent li {
+  background-color: grey;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+}
+main section:nth-child(2) .parent a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+main section:nth-child(2) .parent img:hover {
+  transform: scale(1.2);
+}
+main section:nth-child(2) .parent img {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+main section:nth-child(2) .parent div {
+  position: absolute;
+  bottom: 0;
+  z-index: 12;
+  background-color: #1c1f2d;
+  height: 110px;
+  width: 100%;
+}
+main section:nth-child(2) .parent div p {
+  color: white;
+  font-size: 2rem;
+}
+main section:nth-child(2) .parent .button {
+  display: inline-block;
+  position: relative;
+  margin: 1em;
+  padding: 0.67em;
+  overflow: hidden;
+  text-decoration: none;
+  font-size: 2em;
+  outline: none;
+  color: #FFF;
+  background: transparent;
+  font-family: "raleway", sans-serif;
+}
+main section:nth-child(2) .parent .button span {
+  transform: translateY(0%);
+  display: block;
+  transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+}
+main section:nth-child(2) .parent .button:before,
+main section:nth-child(2) .parent .button:after {
+  content: "";
+  position: absolute;
+  top: 0.67em;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+}
+main section:nth-child(2) .parent .button:before {
+  content: attr(data-hover);
+  transform: translateY(100%);
+}
+main section:nth-child(2) .parent .div3:hover .button span {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+main section:nth-child(2) .parent .div3:hover .button:before {
+  opacity: 1;
+  transform: translate(0);
+  transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+}
+main section:nth-child(2) .div4 {
+  grid-column: 1/span 2;
+  grid-row: span 2;
+  height: 900px;
+}
+main section:nth-child(2) .div7 {
+  grid-row: span 2;
+}
+main section:nth-child(2) .div8 {
+  grid-column: 2/span 2;
+  grid-row: span 2;
 }
 main section:nth-child(3) {
   height: 100vh;
