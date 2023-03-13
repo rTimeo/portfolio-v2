@@ -6,7 +6,7 @@ const links = document.querySelectorAll("header ul li a");
 links.forEach(link => {
   link.addEventListener("mouseenter", () => {
     // Change la couleur de texte pour le lien survolé
-    link.style.color = "white";
+    link.style.color = "#64ffda ";
     // Change la couleur de fond pour le lien survolé
     // Boucle à travers les autres liens et change leur couleur de texte et de fond
     links.forEach(otherLink => {
