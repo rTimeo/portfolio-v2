@@ -284,12 +284,13 @@ main{
                 height: 400px;
 
                 a{
-                    display: block;
+                    display: flex;
                     
 
                     .img-wrapper{
                         position: absolute;
                         height: 100%;
+                        width: 100%;
                         overflow: hidden;
 
                     img{
@@ -300,14 +301,15 @@ main{
                         top: 0;
                         height: 100%;
                         width: 100%;
+                        transition: 0.15s;
                     }
                     
                     }
 
            
 
-
-                    div{
+//test
+                    .test{
                         position: absolute;
                         padding: 30px 0 0 30px;
                         bottom: 0;
@@ -316,69 +318,59 @@ main{
                         height: 120px;
                         width: 100%;
 
-                        p:first-child{
+                        p{
                             color: white;
-                            @extend %first-font;
                             font-size: 2rem;
-                        }
-                        p:nth-child(2){
-                            position: relative;
-                            font-size: 2rem;
-                            color: #FFF;
-                            @extend %second-font;
-                            opacity: 0.6;
                             
-
-                            span {
-                                font-size: 2rem;
-                                transform: translateY(0%);
-                                display: block;
-                                transition: all cubic-bezier(.4,0,.2,1) .4s;
-                            }
+                          
                         }
 
-                        p:nth-child(2):before,
-                        p:nth-child(2):after {
-                            content: '';
-                            position: absolute;
-                            opacity: 0;
-                            transition: all cubic-bezier(.4,0,.2,1) .4s;
-                            }
-
-                        p:nth-child(2):before {
-                            content: attr(data-hover) ;
-                            transform: translateY(100%);
-                            @extend %second-font;
+                    
+                       
+                          
+                    } 
+                   
+                    .p1 {
+                        animation: slide-out-top 1s linear;
+                        transition: all cubic-bezier(.4,0,.2,1) .4s;
+                      }
+                      
+                      .p2 {
+                        display: none;
+                        transition: all cubic-bezier(.4,0,.2,1) .4s;
+                        animation: slide-in-bottom 1s linear;
+                      }
+                      
+                      @keyframes slide-out-top {
+                        0% {
+                          transform: translateY(0);
+                          opacity: 1;
                         }
-
-                        hr{
-                            
-                            opacity: 0;
-                            transform: translateY(100%);
-
-                           
+                        100% {
+                          transform: translateY(-100%);
+                          opacity: 0;
                         }
-                    }
-                }
-            }      
-            li:hover p:nth-child(2)  span {
-                opacity: 0;
-                transform: translateY(-100%);
-            }
+                      }
+                      
+                      @keyframes slide-in-bottom {
+                        0% {
+                          transform: translateY(100%);
+                          opacity: 0;
+                        }
+                        100% {
+                          transform: translateY(0);
+                          opacity: 1;
+                        }
+                      }
+                }   
+                
+                
+            }    
+           
 
-            li:hover p:nth-child(2):before,
-            li:hover hr{
-                opacity: 1;
-                transform: translate(0);
-                transition: all cubic-bezier(.4,0,.2,1) .4s;
-            }
+        
 
-            li:hover hr {
-               opacity: 0.6;
-                            background-color: white;
-                            height: 3px;
-                            width: 100%;
-            }               
+            
             li:nth-child(4){ 
                 grid-area: 2 / 1 / 4 / 3; 
                 height: 100%;

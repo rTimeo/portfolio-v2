@@ -30,4 +30,18 @@ links.forEach(link => {
 
 });
 
+//test
+const p1 = document.querySelector('.p1');
+const p2 = document.querySelector('.p2');
+const container = document.querySelector('.test');
 
+
+container.addEventListener("mouseover", () => {
+  p1.style.display = "none";
+  p2.style.display = "block";
+});
+
+container.addEventListener("mouseout", () => {
+  p1.style.display = "block";
+  p2.style.display = "none";
+});

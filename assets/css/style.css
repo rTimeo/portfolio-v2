@@ -9,11 +9,11 @@ footer .title h3, main section:nth-child(2) .title h3, main section:nth-child(1)
   text-shadow: 1px 3px 11px rgba(0, 0, 0, 0.55);
 }
 
-footer .container .left .left-container p:nth-child(1), footer .title h3, main section:nth-child(2) ul li a div p:first-child, main section:nth-child(2) .title h3, main section:nth-child(1) .title h2, header .text p:nth-child(1), header nav a {
+footer .container .left .left-container p:nth-child(1), footer .title h3, main section:nth-child(2) .title h3, main section:nth-child(1) .title h2, header .text p:nth-child(1), header nav a {
   font-family: "Poppins", sans-serif;
 }
 
-footer .container .left .left-container nav ul li a, footer .container .left .left-container p:nth-child(2) span, footer .container .left .left-container p:nth-child(2), main section:nth-child(2) ul li a div p:nth-child(2):before, main section:nth-child(2) ul li a div p:nth-child(2), main section:nth-child(1) .text p, header .text p:nth-child(2) {
+footer .container .left .left-container nav ul li a, footer .container .left .left-container p:nth-child(2) span, footer .container .left .left-container p:nth-child(2), main section:nth-child(1) .text p, header .text p:nth-child(2) {
   font-family: "Roboto Mono", monospace;
 }
 
@@ -232,11 +232,12 @@ main section:nth-child(2) ul li {
   height: 400px;
 }
 main section:nth-child(2) ul li a {
-  display: block;
+  display: flex;
 }
 main section:nth-child(2) ul li a .img-wrapper {
   position: absolute;
   height: 100%;
+  width: 100%;
   overflow: hidden;
 }
 main section:nth-child(2) ul li a .img-wrapper img {
@@ -247,8 +248,9 @@ main section:nth-child(2) ul li a .img-wrapper img {
   top: 0;
   height: 100%;
   width: 100%;
+  transition: 0.15s;
 }
-main section:nth-child(2) ul li a div {
+main section:nth-child(2) ul li a .test {
   position: absolute;
   padding: 30px 0 0 30px;
   bottom: 0;
@@ -257,52 +259,38 @@ main section:nth-child(2) ul li a div {
   height: 120px;
   width: 100%;
 }
-main section:nth-child(2) ul li a div p:first-child {
+main section:nth-child(2) ul li a .test p {
   color: white;
   font-size: 2rem;
 }
-main section:nth-child(2) ul li a div p:nth-child(2) {
-  position: relative;
-  font-size: 2rem;
-  color: #FFF;
-  opacity: 0.6;
-}
-main section:nth-child(2) ul li a div p:nth-child(2) span {
-  font-size: 2rem;
-  transform: translateY(0%);
-  display: block;
+main section:nth-child(2) ul li a .p1 {
+  animation: slide-out-top 1s linear;
   transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
 }
-main section:nth-child(2) ul li a div p:nth-child(2):before,
-main section:nth-child(2) ul li a div p:nth-child(2):after {
-  content: "";
-  position: absolute;
-  opacity: 0;
+main section:nth-child(2) ul li a .p2 {
+  display: none;
   transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+  animation: slide-in-bottom 1s linear;
 }
-main section:nth-child(2) ul li a div p:nth-child(2):before {
-  content: attr(data-hover);
-  transform: translateY(100%);
+@keyframes slide-out-top {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
 }
-main section:nth-child(2) ul li a div hr {
-  opacity: 0;
-  transform: translateY(100%);
-}
-main section:nth-child(2) ul li:hover p:nth-child(2) span {
-  opacity: 0;
-  transform: translateY(-100%);
-}
-main section:nth-child(2) ul li:hover p:nth-child(2):before,
-main section:nth-child(2) ul li:hover hr {
-  opacity: 1;
-  transform: translate(0);
-  transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
-}
-main section:nth-child(2) ul li:hover hr {
-  opacity: 0.6;
-  background-color: white;
-  height: 3px;
-  width: 100%;
+@keyframes slide-in-bottom {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 main section:nth-child(2) ul li:nth-child(4) {
   grid-area: 2/1/4/3;
