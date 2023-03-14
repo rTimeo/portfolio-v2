@@ -9,11 +9,11 @@ footer .title h3, main section:nth-child(2) .title h3, main section:nth-child(1)
   text-shadow: 1px 3px 11px rgba(0, 0, 0, 0.55);
 }
 
-footer .container .left .left-container p:nth-child(1), footer .title h3, main section:nth-child(2) ul li a div p:nth-child(2), main section:nth-child(2) ul li a div p:first-child, main section:nth-child(2) .title h3, main section:nth-child(1) .title h2, header .text p:nth-child(1), header nav a {
+footer .container .left .left-container p:nth-child(1), footer .title h3, main section:nth-child(2) ul li a div p:first-child, main section:nth-child(2) .title h3, main section:nth-child(1) .title h2, header .text p:nth-child(1), header nav a {
   font-family: "Poppins", sans-serif;
 }
 
-footer .container .left .left-container nav ul li a, footer .container .left .left-container p:nth-child(2) span, footer .container .left .left-container p:nth-child(2), main section:nth-child(1) .text p, header .text p:nth-child(2) {
+footer .container .left .left-container nav ul li a, footer .container .left .left-container p:nth-child(2) span, footer .container .left .left-container p:nth-child(2), main section:nth-child(2) ul li a div p:nth-child(2):before, main section:nth-child(2) ul li a div p:nth-child(2), main section:nth-child(1) .text p, header .text p:nth-child(2) {
   font-family: "Roboto Mono", monospace;
 }
 
@@ -228,26 +228,29 @@ main section:nth-child(2) ul {
 }
 main section:nth-child(2) ul li {
   position: relative;
-  overflow: hidden;
   border-radius: 15px;
+  height: 400px;
 }
 main section:nth-child(2) ul li a {
   display: block;
-  height: 400px;
+}
+main section:nth-child(2) ul li a .img-wrapper {
+  position: absolute;
+  height: 100%;
   overflow: hidden;
 }
-main section:nth-child(2) ul li a img {
+main section:nth-child(2) ul li a .img-wrapper img {
   position: absolute;
-  height: 80%;
   object-fit: cover;
-  transition: all 0.3s ease;
-}
-main section:nth-child(2) ul li a img:hover {
-  transform: scale(1.2);
+  right: 0;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
 }
 main section:nth-child(2) ul li a div {
-  padding: 30px 0 0 30px;
   position: absolute;
+  padding: 30px 0 0 30px;
   bottom: 0;
   z-index: 12;
   background-color: #1c1f2d;
@@ -303,6 +306,7 @@ main section:nth-child(2) ul li:hover hr {
 }
 main section:nth-child(2) ul li:nth-child(4) {
   grid-area: 2/1/4/3;
+  height: 100%;
 }
 main section:nth-child(2) ul li:nth-child(8) {
   grid-area: 4/2/5/4;

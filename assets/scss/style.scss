@@ -280,27 +280,36 @@ main{
 
             li{
                 position: relative;
-                overflow: hidden;
                 border-radius: 15px;
+                height: 400px;
 
                 a{
                     display: block;
-                    height: 400px;
-                    overflow: hidden;
                     
+
+                    .img-wrapper{
+                        position: absolute;
+                        height: 100%;
+                        overflow: hidden;
 
                     img{
                         position: absolute;
-                        height: 80%;
                         object-fit: cover;
-                        transition: all 0.3s ease;
+                        right: 0;
+                        left: 0;
+                        top: 0;
+                        height: 100%;
+                        width: 100%;
                     }
-                    img:hover{
-                        transform: scale(1.2);
+                    
                     }
+
+           
+
+
                     div{
-                        padding: 30px 0 0 30px;
                         position: absolute;
+                        padding: 30px 0 0 30px;
                         bottom: 0;
                         z-index: 12;
                         background-color: #1c1f2d;
@@ -316,7 +325,7 @@ main{
                             position: relative;
                             font-size: 2rem;
                             color: #FFF;
-                            @extend %first-font;
+                            @extend %second-font;
                             opacity: 0.6;
                             
 
@@ -339,6 +348,7 @@ main{
                         p:nth-child(2):before {
                             content: attr(data-hover) ;
                             transform: translateY(100%);
+                            @extend %second-font;
                         }
 
                         hr{
@@ -371,10 +381,15 @@ main{
             }               
             li:nth-child(4){ 
                 grid-area: 2 / 1 / 4 / 3; 
+                height: 100%;
+               
+                
             }
             
             li:nth-child(8){ 
                 grid-area: 4 / 2 / 5 / 4; 
+                
+               
             } 
 
             li:hover img{
