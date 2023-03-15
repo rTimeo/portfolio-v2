@@ -76,7 +76,7 @@ window.addEventListener('scroll', () => {
     // Animer la transition vers la position fixe
     nav.style.position="fixed";
     nav.animate([
-      { opacity: '0', transform: 'translateY(-50px)' },
+      { opacity: '0', transform: 'translateY(-180px)' },
       { opacity: '1', transform: 'translateY(0)' }
     ], {
       duration: 500,
@@ -85,14 +85,17 @@ window.addEventListener('scroll', () => {
     
     
     before.animate([
-      { opacity: '0', transform: 'translateY(-100px)' },
-      { opacity: '1', transform: 'translateY(0px)' }
+      { opacity: '0', transform: 'translateY(-100px)', height: '0px'},
+      {  transform: 'translateY(0px)' }
 
 
     ], {
       duration: 500,
-      easing: 'ease-in-out'
+      easing: 'ease-in-out',
+      fill:'forwards'
     });
+
+
     
     isNavFixed = true;
   }

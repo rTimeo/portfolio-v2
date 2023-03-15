@@ -57,12 +57,10 @@ header {
   padding-top: 300px;
 }
 header .background {
-  background: rgba(25, 28, 41, 0.7);
-  backdrop-filter: saturate(180%) blur(20px);
-  /* backdrop-filter: saturate(180%) blur(20px); */
-  content: "";
+  background-color: rgba(25, 28, 41, 0.8); /* Ajoute une couleur de fond semi-transparente */
+  backdrop-filter: blur(10px); /* Ajoute un flou à l'arrière-plan */ /* backdrop-filter: saturate(180%) blur(20px); */
   width: 100%;
-  z-index: 454545454;
+  z-index: 454;
   height: 100px;
   top: 0;
 }
