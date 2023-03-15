@@ -11,7 +11,7 @@ links.forEach(link => {
     // Boucle à travers les autres liens et change leur couleur de texte et de fond
     links.forEach(otherLink => {
       if (otherLink !== link) {
-        otherLink.style.color = "white";
+        otherLink.style.color = "#64ffda";
         otherLink.style.opacity ="0.5";
   
       }
@@ -30,18 +30,38 @@ links.forEach(link => {
 
 });
 
-//test
-const p1 = document.querySelector('.p1');
-const p2 = document.querySelector('.p2');
-const container = document.querySelector('.test');
+const nav = document.querySelector('header nav');
+const header = document.querySelector('header')
+const before = document.querySelector(".background")
 
+console.log(before)
 
-container.addEventListener("mouseover", () => {
-  p1.style.display = "none";
-  p2.style.display = "block";
+window.addEventListener("load", function() {
+  if (window.scrollY < 100) {
+    // Ajouter la classe qui cache l'élément de navigation
+    before.style.display="none";
+    nav.style.display="";
+  }
+});
+// Ajouter un écouteur d'événement de défilement (scroll)
+window.addEventListener('scroll', () => {
+  // Vérifiez si la position de défilement est supérieure à 20 pixels et inférieure à 500 pixels
+  if (window.scrollY < 100) {
+    // Ajouter la classe qui cache l'élément de navigation
+    before.style.display="none";
+    nav.style.display="";
+    
+  } else if(window.scrollY < 600 ) {
+    // Sinon, enlevez la classe qui cache l'élément de navigation
+    nav.style.display="none";;
+    before.style.display="none";
+  }
+  else if(window.scrollY > 700) {
+    // Sinon, enlevez la classe qui cache l'élément de navigation
+    nav.style.display="sticky";
+    before.style.display="";
+  }
+  
+
 });
 
-container.addEventListener("mouseout", () => {
-  p1.style.display = "block";
-  p2.style.display = "none";
-});

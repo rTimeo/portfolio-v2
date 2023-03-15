@@ -26,18 +26,17 @@ header{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    position: relative;
 
 
-
+    
     nav{
-        position: fixed;
-        right: 0;
-        left: 0;
-    z-index: 999; /* donner une valeur de z-index élevée pour placer le menu au-dessus du contenu */
+        position: absolute;
         width: 100vw;
 
     @extend %flex-center;
     height: 150px;
+
 
    
 
@@ -92,6 +91,19 @@ header{
 
 
     }
+
+    
+    .background{
+            background: rgb(26 26 26 / 70%);
+    backdrop-filter: saturate(180%) blur(20px);
+    /* backdrop-filter: saturate(180%) blur(20px); */
+    content: '';
+    height: 100px;
+    position: fixed;
+    width: 100%;
+    z-index: 454545454;
+    }
+
     .text{
         height: 90%;
         @extend %flex-center;
@@ -282,6 +294,9 @@ main{
                 position: relative;
                 border-radius: 15px;
                 height: 400px;
+                border-radius: 10px;
+                overflow: hidden;
+                
 
                 a{
                     display: flex;
@@ -308,64 +323,70 @@ main{
 
            
 
-//test
-                    .test{
+
+                    .text-wrapper{
                         position: absolute;
-                        padding: 30px 0 0 30px;
                         bottom: 0;
                         z-index: 12;
                         background-color: #1c1f2d;
                         height: 120px;
                         width: 100%;
-
+                        padding: 20px;
+                        
+                      
                         p{
                             color: white;
                             font-size: 2rem;
-                            
-                          
+                            @extend %second-font;
+                              transition: transform 0.5s, opacity 0.5s;                          
                         }
 
-                    
-                       
-                          
+                      
                     } 
+                }    
+            }      
+
+         .p2{
+            opacity: 0.5;
+        }
+
+        .p3{
+            position: absolute;
+            transform: translateY(23px);
+            opacity: 0;
+        }
+        .p3::after{
+            
+            position: absolute;
+            content: "";
+            transform: translateY(23px);
+            opacity: 1;
+            width: 50px;
+            height: 2px;
+            background-color: red;
+            top: -35%;
+            right: -65px;
+        }
+                            
+        li:hover .p2 {
+            transform: translateY(-23px);
+            opacity: 0;
+        }
+
+        li:hover .p3 {
+            transform: translateY(-23px);
+            opacity: 0.5;
+        }
+                      
                    
-                    .p1 {
-                        animation: slide-out-top 1s linear;
-                        transition: all cubic-bezier(.4,0,.2,1) .4s;
-                      }
+                       
+
                       
-                      .p2 {
-                        display: none;
-                        transition: all cubic-bezier(.4,0,.2,1) .4s;
-                        animation: slide-in-bottom 1s linear;
-                      }
-                      
-                      @keyframes slide-out-top {
-                        0% {
-                          transform: translateY(0);
-                          opacity: 1;
-                        }
-                        100% {
-                          transform: translateY(-100%);
-                          opacity: 0;
-                        }
-                      }
-                      
-                      @keyframes slide-in-bottom {
-                        0% {
-                          transform: translateY(100%);
-                          opacity: 0;
-                        }
-                        100% {
-                          transform: translateY(0);
-                          opacity: 1;
-                        }
-                      }
-                }   
+                  
+                 
                 
                 
-            }    
+               
            
 
         
