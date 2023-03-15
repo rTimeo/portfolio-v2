@@ -1,5 +1,5 @@
 @charset "UTF-8";
-header .text, header nav {
+header nav {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,8 +33,12 @@ header nav li:nth-child(4) a::before, header nav li:nth-child(3) a::before, head
   font-size: 10px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background-color: #1A1D2A;
+  background-color: rgb(25, 28, 41);
 }
 
 body::-webkit-scrollbar {
@@ -42,18 +46,32 @@ body::-webkit-scrollbar {
 }
 
 header {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.0705882353) 50%, #1A1D2A 100%), url(../images/fond.jpg);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.0705882353) 50%, rgb(25, 28, 41) 100%), url(../images/fond.jpg);
   height: 100vh;
   width: 100vw;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: 300px;
+}
+header .background {
+  background: rgba(25, 28, 41, 0.7);
+  backdrop-filter: saturate(180%) blur(20px);
+  /* backdrop-filter: saturate(180%) blur(20px); */
+  content: "";
+  width: 100%;
+  z-index: 454545454;
+  height: 100px;
+  top: 0;
 }
 header nav {
   position: absolute;
   width: 100vw;
-  height: 150px;
+  top: 0;
+  z-index: 546645645654645440;
+  padding-top: 25px;
 }
 header nav ul {
   display: flex;
@@ -86,20 +104,6 @@ header nav li:nth-child(3) a::before {
 header nav li:nth-child(4) a::before {
   content: "04";
 }
-header .background {
-  background: rgba(26, 26, 26, 0.7);
-  backdrop-filter: saturate(180%) blur(20px);
-  /* backdrop-filter: saturate(180%) blur(20px); */
-  content: "";
-  height: 100px;
-  position: fixed;
-  width: 100%;
-  z-index: 454545454;
-}
-header .text {
-  height: 90%;
-  flex-direction: column;
-}
 header .text p:nth-child(1) {
   font-size: 10vw;
   text-transform: uppercase;
@@ -126,8 +130,7 @@ main section:nth-child(1) {
   display: flex;
   flex-direction: column;
   position: relative;
-  height: 90vh;
-  margin-bottom: 200px;
+  margin-bottom: 500px;
   padding: 110px 10px 0;
 }
 main section:nth-child(1) .title {
@@ -137,7 +140,7 @@ main section:nth-child(1) .title {
 main section:nth-child(1) .title h2 {
   color: white;
   text-transform: uppercase;
-  font-size: 7rem;
+  font-size: 6rem;
   position: relative;
   white-space: nowrap; /* empêche le texte de passer à la ligne */
 }
@@ -212,7 +215,7 @@ main section:nth-child(2) .title {
 main section:nth-child(2) .title h3 {
   color: white;
   text-transform: uppercase;
-  font-size: 7rem;
+  font-size: 6rem;
   position: relative;
   white-space: nowrap; /* empêche le texte de passer à la ligne */
 }
@@ -311,18 +314,6 @@ main section:nth-child(2) ul li:nth-child(8) {
 main section:nth-child(2) ul li:hover img {
   transform: scale(1.2);
 }
-@media (max-width: 1024px) {
-  main section:nth-child(2) ul {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
-  }
-  main section:nth-child(2) ul li:nth-child(8) {
-    grid-area: 5/1/6/3;
-  }
-}
 
 footer {
   padding: 100px 0 0 0;
@@ -331,12 +322,14 @@ footer {
 footer .title {
   display: flex;
   margin-bottom: 100px;
-  margin-left: 10%;
+  max-width: 1400px;
+  margin: 0 auto 100px;
+  padding-left: 10px;
 }
 footer .title h3 {
   color: white;
   text-transform: uppercase;
-  font-size: 7rem;
+  font-size: 6rem;
   position: relative;
   white-space: nowrap; /* empêche le texte de passer à la ligne */
 }
@@ -394,7 +387,7 @@ footer .container .left .left-container nav ul li:first-child {
 }
 footer .container .left .left-container nav ul li:first-child a {
   position: relative;
-  font-size: 3.5rem;
+  font-size: 3rem;
 }
 footer .container .left .left-container nav ul li:first-child a::before {
   transition: all 0.1s ease-in-out;
@@ -426,6 +419,19 @@ footer .container .right img {
   width: 100%;
   height: 670px;
   opacity: 0.5;
+}
+
+@media (max-width: 1024px) {
+  #projets ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
+  #projets ul li:nth-child(8) {
+    grid-area: 5/1/6/3;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

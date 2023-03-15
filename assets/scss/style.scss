@@ -9,9 +9,13 @@
     box-sizing: border-box;
     font-size: 10px;
 }
+html{
+        scroll-behavior: smooth;
+
+}
 
 body{
-    background-color: $first-color ;
+    background-color: $first-color ;   
 }
 
 body::-webkit-scrollbar {
@@ -26,17 +30,32 @@ header{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    position: relative;
-
-
+    display: flex;
+    justify-content: center;
+    padding-top: 300px;
+ 
     
+
+
+     .background{
+
+            background: rgba(25, 28, 41, 0.7);
+    backdrop-filter: saturate(180%) blur(20px);
+    /* backdrop-filter: saturate(180%) blur(20px); */
+    content: '';
+    width: 100%;
+    z-index: 454545454;
+    height: 100px;
+    top: 0;
+
+    }
     nav{
         position: absolute;
         width: 100vw;
-
+        top: 0;
+        z-index: 546645645654645465;
     @extend %flex-center;
-    height: 150px;
-
+        padding-top: 25px;
 
    
 
@@ -93,22 +112,10 @@ header{
     }
 
     
-    .background{
-            background: rgb(26 26 26 / 70%);
-    backdrop-filter: saturate(180%) blur(20px);
-    /* backdrop-filter: saturate(180%) blur(20px); */
-    content: '';
-    height: 100px;
-    position: fixed;
-    width: 100%;
-    z-index: 454545454;
-    }
+   
 
     .text{
-        height: 90%;
-        @extend %flex-center;
-        flex-direction: column;
-
+        
 
         p:nth-child(1){
             font-size: 10vw;
@@ -150,8 +157,7 @@ main{
         display: flex;
         flex-direction: column;
         position: relative;
-        height: 90vh;
-        margin-bottom: 200px;
+        margin-bottom: 500px;
         padding: 110px 10px 0 ;
 
         .title{
@@ -163,7 +169,7 @@ main{
                 color: white;
                 @extend %first-font;
                 text-transform: uppercase;
-                font-size: 7rem;
+                font-size: 6rem;
                 position: relative;
                 @extend %text-shadow;
                 white-space: nowrap; /* empêche le texte de passer à la ligne */
@@ -264,7 +270,7 @@ main{
                 color: white;
                 @extend %first-font;
                 text-transform: uppercase;
-                font-size: 7rem;
+                font-size: 6rem;
                 position: relative;
                 @extend %text-shadow;
                 white-space: nowrap; /* empêche le texte de passer à la ligne */
@@ -414,19 +420,7 @@ main{
                             
 
               
-        @media (max-width: 1024px) {
-            ul{
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(6, 1fr);
-                grid-column-gap: 20px;
-                grid-row-gap: 20px;
-
-                li:nth-child(8){ 
-                    grid-area: 5 / 1 / 6 / 3; 
-                }
-            }
-        }
+    
     }
 
     
@@ -443,13 +437,14 @@ footer{
         .title{
             display: flex;
             margin-bottom: 100px;
-            margin-left: 10%;
-
+            max-width: 1400px;
+            margin: 0 auto 100px;
+            padding-left: 10px;
             h3{
                 color: white;
                 @extend %first-font;
                 text-transform: uppercase;
-                font-size: 7rem;
+                font-size: 6rem;
                 position: relative;
                 @extend %text-shadow;
                 white-space: nowrap; /* empêche le texte de passer à la ligne */
@@ -522,7 +517,7 @@ footer{
                                     margin-bottom: 30px;
                                     a{
                                         position: relative;
-                                        font-size: 3.5rem;
+                                        font-size: 3rem;
                                     }
                                     a::before{
                                         transition: all 0.1s ease-in-out;
@@ -573,4 +568,24 @@ footer{
                     }
                 }
              }
-    }
+    }    
+    
+    
+    
+    @media (max-width: 1024px) {
+        
+        #projets{
+             ul{
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(6, 1fr);
+                grid-column-gap: 20px;
+                grid-row-gap: 20px;
+
+                li:nth-child(8){ 
+                    grid-area: 5 / 1 / 6 / 3; 
+                }
+            }
+        }
+           
+        }
