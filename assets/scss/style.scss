@@ -31,8 +31,10 @@ header{
     background-size: cover;
     background-position: center;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    padding-top: 300px;
+    gap: 15%;
  
     
 
@@ -41,15 +43,17 @@ header{
 
         background-color: rgba(25, 28, 41, 0.8); /* Ajoute une couleur de fond semi-transparente */
         
-        backdrop-filter: blur(10px); /* Ajoute un flou à l'arrière-plan */    /* backdrop-filter: saturate(180%) blur(20px); */
-    width: 100%;
+        backdrop-filter:  blur(10px); /* Ajoute un flou à l'arrière-plan */    /* backdrop-filter: saturate(180%) blur(20px); */
+        -webkit-backdrop-filter:  blur(10px); /* Ajoute un flou à l'arrière-plan */    /* backdrop-filter: saturate(180%) blur(20px); */
+
+        width: 100%;
     z-index: 454;
     height: 100px;
     top: 0;
     
 
     }
-    nav{
+    .nav-head{
         position: absolute;
         width: 100vw;
         top: 0;
@@ -57,7 +61,9 @@ header{
     @extend %flex-center;
         padding-top: 25px;
 
-   
+        .toggle{
+            display: none;
+        }
 
         ul{
             display: flex;
@@ -122,7 +128,7 @@ header{
             text-transform: uppercase;
             letter-spacing: 10px;
             color: white;
-
+            text-align: center;
             @extend %first-font;
             @extend %text-shadow;
         }
@@ -144,6 +150,71 @@ header{
             @extend %text-shadow;
         }
     }
+
+
+.container {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+   }
+   
+   .chevron {
+     position: absolute;
+     width: $base * 3.5;
+     height: $base * 0.8;
+     opacity: 0;
+     transform: scale(0.3);
+     animation: move-chevron 3s ease-out infinite;
+   }
+   
+   .chevron:first-child {
+     animation: move-chevron 3s ease-out 1s infinite;
+   }
+   
+   .chevron:nth-child(2) {
+     animation: move-chevron 3s ease-out 2s infinite;
+   }
+   
+   .chevron:before,
+   .chevron:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    background: $second-color;
+   }
+   
+   .chevron:before {
+    left: 0;
+    transform: skewY(30deg);
+   }
+   
+   .chevron:after {
+    right: 0;
+    width: 50%;
+    transform: skewY(-30deg);
+   }
+   
+   @keyframes move-chevron {
+    25% {
+     opacity: 1;
+       }
+    33.3% {
+     opacity: 1;
+     transform: translateY($base * 3.8);
+    }
+    66.6% {
+     opacity: 1;
+     transform: translateY($base * 5.2);
+    }
+    100% {
+     opacity: 0;
+     transform: translateY($base * 8) scale(0.5);
+    }
+   }
 
 }
 
@@ -194,7 +265,7 @@ main{
         .text{
             border: 5px solid rgba(255, 255, 255, 0.146);
             position: relative;
-            padding: 50px 50px 50px 100px;
+            padding: 50px;
 
             p{
                 color: white;
@@ -210,37 +281,8 @@ main{
                 
             }
 
-            p::before{
-                content: "<p>";
-                position: absolute;
-                opacity: 0.5;
-                top: 35px;
-                left: 42px;
-                font-size: 2rem;
-                opacity: 0.2;
 
-            }
-                
-            p::after{
-                content: "</p>";
-                position: absolute;
-                opacity: 0.5;
-                bottom: 35px;
-                left: 42px;
-                font-size: 2rem;
-                opacity: 0.2;
-
-            }
-
-            hr{
-                position: absolute;
-                width: 2px;
-                height: 50%;
-                left: 52px;
-                bottom: 25%;
-                
-                opacity: 0.1;
-            }
+        
             
         }
 
@@ -319,7 +361,7 @@ main{
                         object-fit: cover;
                         right: 0;
                         left: 0;
-                        top: 0;
+                        top: -35px;
                         height: 100%;
                         width: 100%;
                         transition: 0.15s;
@@ -469,11 +511,15 @@ footer{
 
              .container{
                 width: 100%;
+                display: flex;
+                
+
+                
                 
                 .left{
                     background-color: rgba(0, 0, 0, 0.257);
                     width: 50%;
-                    float: left;
+
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -517,7 +563,7 @@ footer{
                                     margin-bottom: 30px;
                                     a{
                                         position: relative;
-                                        font-size: 3rem;
+                                        font-size: 1.5vw;
                                     }
                                     a::before{
                                         transition: all 0.1s ease-in-out;
@@ -556,7 +602,6 @@ footer{
 
                 .right{
                     width: 50%;
-                    float: right;
 
                     img{
                         object-fit: cover;
@@ -573,6 +618,16 @@ footer{
     
     
     @media (max-width: 1024px) {
+
+        #a-propos{
+            img{
+                top: 300px; 
+                width: 70%;
+                left: 20%;
+
+            }
+        }
+
         
         #projets{
              ul{
@@ -587,5 +642,226 @@ footer{
                 }
             }
         }
+
+        #contact{
+           .left{
+            p{
+                font-size: 2rem;
+            }
+            ul{
+              .a{
+                font-size: 2rem ;
+              }
+            }
+           }
            
         }
+
+   }
+
+   @media screen and  (max-width: 1024px) {
+
+    #a-propos{
+        img{
+            top: 300px; 
+            width: 70%;
+            left: 20%;
+
+        }
+    }
+
+    
+    #projets{
+         ul{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+            grid-column-gap: 20px;
+            grid-row-gap: 20px;
+
+            li:nth-child(8){ 
+                grid-area: 5 / 1 / 6 / 3; 
+            }
+        }
+    }
+
+    #contact{
+       .left{
+        p{
+            font-size: 2rem;
+        }
+        ul{
+          .a{
+            font-size: 2rem ;
+          }
+        }
+       }
+       
+    }
+
+}
+
+
+@media screen and  (max-width: 900px) {
+    #a-propos{
+
+
+
+        img{
+            top: 80%;
+        }
+
+
+
+
+
+    }
+}
+
+@media screen and  (max-width: 768px) {
+
+  main{
+    section:nth-child(1){
+
+            
+        .title{
+                h2{
+
+                font-size: 2rem;
+
+            }
+        }
+        
+  }
+}
+
+main{
+    section:nth-child(2){
+
+            
+        .title{
+                h3{
+
+                font-size: 2rem;
+
+            }
+        }
+        
+  }
+}
+
+
+    #accueil{
+        nav{
+            justify-content: end;
+            padding: 25px;
+        }
+      
+         .toggle{
+            
+            display: block;
+            position: relative;
+            z-index: 1;
+
+            .open{
+                font-size: 3rem;
+                color: white;
+            }
+        }
+
+      
+
+            span{
+                display: none;
+            }
+
+            li a::before{
+                display: none;
+            }
+            .background{
+                display: none;
+            }
+        }
+
+        
+    
+      .close{
+                font-size: 4rem;
+                display: none;
+                color: white;
+            }
+
+    
+    
+     .opened .open{
+        display: none;
+    }
+    .opened .close{
+        display: block;
+        
+    }
+
+     .nav-head ul{
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.8) ;
+            flex-direction: column;
+            transform: translateX(-100%);
+            transition: 0.2s;
+            
+     }
+    .opened .nav-head ul{
+        transform: translateX(0);
+    }
+
+
+
+
+
+    #a-propos{
+        img{
+            top: 85%;
+        }
+    }
+
+    #projets{
+        padding: 0 20px;
+        ul{
+            grid: none;
+            display: flex;
+            flex-direction: column;
+
+            li{ 
+                grid-area: 2 / 1 / 4 / 3; 
+                height: 500px;
+               
+                
+            }
+            
+        }
+        
+    }
+
+    footer{
+
+    .container{
+        flex-direction: column;
+              .left{
+                padding: 100px 0 ;
+            width: 100%;
+
+        }
+        .right{
+            width: 100%;
+        }
+    }
+    }
+
+  
+    
+}
