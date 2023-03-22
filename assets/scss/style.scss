@@ -348,30 +348,18 @@ main{
 
                 a{
                     
-                    .img-wrapper{
-                        display: flex;
-                        padding-top: 10px;
-                        position: absolute;
-                        width: 100%;
-                        height: 100%;
-                        background-color: white;
-
-
+         
                     img{
-                        position: absolute;
-                        object-fit: cover;
-                        right: 0;
-                        height: 80%;
-                        width: 100%;
-                        transition: 0.15s;
+                       object-fit: cover ;
+                       width: 100%;
                     }
                     
-                    }
 
            
 
 
                     .text-wrapper{
+                        opacity: 0.5;
                         position: absolute;
                         bottom: 0;
                         z-index: 12;
