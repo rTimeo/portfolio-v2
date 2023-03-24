@@ -24,7 +24,7 @@ body::-webkit-scrollbar {
 
 header{
     background: linear-gradient(180deg,#00000012 50%,$first-color 100%),
-    url(../images/v2-MINIMALIST-LANDSCAPE-SUN-4k.png);
+    url(../images/background.png);
     height: 100vh;
     width: 100vw;
     background-repeat: no-repeat;
@@ -43,8 +43,8 @@ header{
 
         background-color: rgba(25, 28, 41, 0.8); /* Ajoute une couleur de fond semi-transparente */
         
-        backdrop-filter:  blur(10px); /* Ajoute un flou à l'arrière-plan */    /* backdrop-filter: saturate(180%) blur(20px); */
-        -webkit-backdrop-filter:  blur(10px); /* Ajoute un flou à l'arrière-plan */    /* backdrop-filter: saturate(180%) blur(20px); */
+        backdrop-filter:  blur(20px); /* Ajoute un flou à l'arrière-plan */    /* backdrop-filter: saturate(180%) blur(20px); */
+        -webkit-backdrop-filter:  blur(20px); /* Ajoute un flou à l'arrière-plan */    /* backdrop-filter: saturate(180%) blur(20px); */
 
         width: 100%;
     z-index: 454;
@@ -158,6 +158,9 @@ header{
     justify-content: center;
     align-items: center;
     width: 200px;
+    
+    
+   
    }
    
    .chevron {
@@ -167,6 +170,7 @@ header{
      opacity: 0;
      transform: scale(0.3);
      animation: move-chevron 3s ease-out infinite;
+
    }
    
    .chevron:first-child {
@@ -334,29 +338,43 @@ main{
         ul {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(4, 1fr);
+            grid-template-rows: repeat(auto, 1fr);
             grid-column-gap: 30px;
             grid-row-gap: 30px;
 
             li{
-                position: relative;
                 border-radius: 15px;
                 height: 500px;
                 border-radius: 10px;
                 overflow: hidden;
+                position: relative;
                 
 
                 a{
-         
-             
                     
+                    
+                    .img-wrapper{
+                        
+                        height: 90%;
+                        width: 100%;
+                        position: relative;
+                        
+                        background: rgb(230,218,212);
+                        background: linear-gradient(80deg, rgba(230,218,212,1) 0%, rgba(246,240,232,1) 100%);
+                    }
 
-           
-
+                    img{
+                        width: 100%;
+                        height: 85%;
+                        object-fit: contain;
+                        transition: 0.15s;
+                        position: absolute;
+                        
+                    }
 
                     .text-wrapper{
-                        opacity: 0.5;
                         position: absolute;
+                        opacity: 1;
                         bottom: 0;
                         z-index: 12;
                         background-color: #1c1f2d;
@@ -365,13 +383,23 @@ main{
                         padding: 20px;
                         
                       
-                        p{
+                        p,span{
                             color: white;
                             font-size: 2rem;
                             @extend %second-font;
                               transition: transform 0.5s, opacity 0.5s;                          
                         }
 
+                        .p-title{
+                            @extend %first-font;
+                            margin-bottom: 15px;
+                        }
+
+                        span{
+                            border: 1px solid white;
+                            padding: 5px 10px;
+                            border-radius: 5px ;
+                        }
                       
                     } 
                 }    
@@ -391,10 +419,10 @@ main{
             position: absolute;
             content: "";
             transform: translateY(23px);
-            opacity: 1;
-            width: 50px;
+            opacity: 0.5;
+            width: 55px;
             height: 2px;
-            background-color: red;
+            background-color: rgb(255, 255, 255);
             top: -35%;
             right: -65px;
         }
@@ -415,7 +443,8 @@ main{
                       
                   
                  
-                
+                   
+       
                 
                
            
@@ -424,18 +453,14 @@ main{
 
             
             li:nth-child(4){ 
-                grid-area: 2 / 1 / 4 / 3; 
+                grid-area: 2 / 1 / 4 / 3;
                 height: 100%;
-               
-                
+                img{
+                    height: 90%;
+                }
             }
             
-            li:nth-child(8){ 
-                grid-area: 4 / 2 / 5 / 4; 
-                
-               
-            } 
-
+         
             li:hover img{
                 transform: scale(1.2);
             }
