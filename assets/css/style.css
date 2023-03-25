@@ -13,7 +13,7 @@ footer .container .left .left-container p:nth-child(1), footer .title h3, main s
   font-family: "Poppins", sans-serif;
 }
 
-footer .container .left .left-container nav ul li a, footer .container .left .left-container p:nth-child(2) span, footer .container .left .left-container p:nth-child(2), main section:nth-child(2) ul li a .text-wrapper p, main section:nth-child(2) ul li a .text-wrapper span, main section:nth-child(1) .text p, header .text p:nth-child(2) {
+footer .container .left .left-container nav ul li a, footer .container .left .left-container p:nth-child(2) span, footer .container .left .left-container p:nth-child(2), main section:nth-child(2) ul li a .text-wrapper p, main section:nth-child(2) ul li a .text-wrapper span, header .text p:nth-child(2) {
   font-family: "Roboto Mono", monospace;
 }
 
@@ -225,6 +225,7 @@ main section:nth-child(1) .text {
 main section:nth-child(1) .text p {
   color: white;
   font-size: 2.1rem;
+  font-family: "Montserrat", sans-serif;
   line-height: 50px;
 }
 main section:nth-child(1) .text p span {
@@ -604,10 +605,13 @@ footer .container .right img {
   main section:nth-child(1) {
     align-items: center;
     padding: 50px 0 0 0;
-    margin-bottom: 300px;
+    margin-bottom: 350px;
   }
   main section:nth-child(1) .title h2 {
     font-size: 3rem;
+  }
+  main section:nth-child(1) .text {
+    padding: 30px;
   }
   main section:nth-child(1) .text p {
     font-size: 2vw;
@@ -618,7 +622,7 @@ footer .container .right img {
     text-transform: uppercase;
   }
   main section:nth-child(1) .text img {
-    top: 260px;
+    top: 180px;
     width: 70%;
     left: 20%;
   }
@@ -689,9 +693,52 @@ footer .container .right img {
     text-transform: uppercase;
   }
   main section:nth-child(1) .text img {
-    top: 260px;
-    width: 70%;
-    left: 20%;
+    top: 150px;
+    width: 100%;
+    left: 0;
+  }
+  main section:nth-child(2) {
+    padding: 0px 10px 0;
+  }
+  main section:nth-child(2) .title {
+    justify-content: center;
+  }
+  main section:nth-child(2) .title h3 {
+    font-size: 3rem;
+  }
+  main section:nth-child(2) ul {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+  }
+  main section:nth-child(2) ul li {
+    height: 300px;
+  }
+  main section:nth-child(2) ul li a .img-wrapper img {
+    height: 65%;
+  }
+  main section:nth-child(2) ul li:nth-child(4) {
+    grid-area: 4/1/5/2;
+  }
+  main section:nth-child(2) ul li:nth-child(4) .img-wrapper img {
+    height: 70%;
+  }
+  #contact .title {
+    padding: 0 50px;
+  }
+  #contact .left {
+    padding: 30px 0;
+  }
+  #contact .left p {
+    font-size: 1.5rem;
+  }
+  #contact .left p span {
+    font-size: 1.5rem;
+  }
+  #contact .left ul .email {
+    font-size: 1.5rem;
+  }
+  #contact .left ul li a {
+    font-size: 1.5rem;
   }
 }
 
