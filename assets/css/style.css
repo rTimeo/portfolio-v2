@@ -35,6 +35,7 @@ header .nav-head li:nth-child(4) a::before, header .nav-head li:nth-child(3) a::
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -417,20 +418,14 @@ footer .container .left .left-container p:nth-child(2) span {
   color: #64ffda;
 }
 footer .container .left .left-container nav ul li {
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 footer .container .left .left-container nav ul li a {
+  position: relative;
   font-size: 2rem;
   color: white;
 }
-footer .container .left .left-container nav ul li:first-child {
-  margin-bottom: 30px;
-}
-footer .container .left .left-container nav ul li:first-child a {
-  position: relative;
-  font-size: 1.5vw;
-}
-footer .container .left .left-container nav ul li:first-child a::before {
+footer .container .left .left-container nav ul li a::before {
   transition: all 0.1s ease-in-out;
   content: "";
   position: absolute;
@@ -441,13 +436,13 @@ footer .container .left .left-container nav ul li:first-child a::before {
   left: -1%;
   background: linear-gradient(180deg, #ff006f 100%, #f3f3f3 100%, rgba(255, 209, 0, 0) 100%);
 }
-footer .container .left .left-container nav ul li:first-child a:hover::before {
+footer .container .left .left-container nav ul li a:hover::before {
   transition: all 0.1s ease-in-out;
   content: "";
   position: absolute;
   bottom: 13.5%;
   z-index: -1;
-  height: 80%;
+  height: 70%;
   width: 102%;
   left: -1%;
 }

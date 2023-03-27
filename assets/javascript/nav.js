@@ -101,30 +101,27 @@ window.addEventListener('scroll', () => {
   
 });
 
-let toggle = document.querySelector(".toggle");
+
+function toggleResponsive(){
+  let toggle = document.querySelector(".toggle");
 let body = document.querySelector("body");
 
 toggle.addEventListener("click", function(){
   body.classList.toggle('opened');
-  
-  
-  
 })
 
 
   const opened = document.querySelector('.opened');
-    let loinks = document.querySelectorAll('a');
+  let linksToggle = document.querySelectorAll('a');
 
 
-    loinks.forEach(link => {
+    linksToggle.forEach(link => {
       link.addEventListener('click', event =>{
-        
         body.classList.remove('opened');
-    
-    
-
-       
       })
-      
     })
+}
+
+toggleResponsive()
+
     
