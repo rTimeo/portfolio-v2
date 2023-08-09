@@ -5,11 +5,11 @@ header .nav-head {
   align-items: center;
 }
 
-footer .title h3, main section:nth-child(2) .title h3, main section:nth-child(1) .title h2, header .text span, header .text p:nth-child(2), header .text p:nth-child(1), header .nav-head a {
+footer .title h2, main section .title h1, header .text span, header .text p:nth-child(2), header .text p:nth-child(1), header .nav-head a {
   text-shadow: 1px 3px 11px rgba(0, 0, 0, 0.55);
 }
 
-footer .container .left .left-container p:nth-child(1), footer .title h3, main section:nth-child(2) .title h3, main section:nth-child(1) .title h2, header .text p:nth-child(1), header .nav-head a {
+footer .container .left .left-container p:nth-child(1), footer .title h2, main section .title h1, header .text p:nth-child(1), header .nav-head a {
   font-family: "Poppins", sans-serif;
 }
 
@@ -183,73 +183,25 @@ header .chevron:after {
   }
 }
 
-main {
-  max-width: 1400px;
-  margin: 0 auto;
-}
-main section:nth-child(1) {
+main section {
   display: flex;
   flex-direction: column;
-  position: relative;
-  margin-bottom: 100px;
-  padding: 110px 100px 0;
-}
-main section:nth-child(1) .title {
-  display: flex;
-  margin-bottom: 50px;
-}
-main section:nth-child(1) .title h2 {
-  color: white;
-  text-transform: uppercase;
-  font-size: 6rem;
-  position: relative;
-  white-space: nowrap; /* empêche le texte de passer à la ligne */
-}
-main section:nth-child(1) .title h2::after {
-  transition: all 0.1s ease-in-out;
-  content: "";
-  position: absolute;
-  bottom: 13.5%;
-  z-index: -1;
-  height: 0.3em;
-  width: 102%;
-  left: -1%;
-  background: linear-gradient(180deg, #2C49D8 100%, #f3f3f3 100%, rgba(255, 209, 0, 0) 100%);
-}
-main section:nth-child(1) .text {
-  border: 5px solid rgba(255, 255, 255, 0.146);
-  position: relative;
-  padding: 50px;
-  display: flex;
   justify-content: center;
+  align-items: center;
 }
-main section:nth-child(1) .text p {
-  color: white;
-  font-size: 1.8rem;
-  font-family: "Montserrat", sans-serif;
-  line-height: 50px;
-}
-main section:nth-child(1) .text p span {
-  font-size: 1.8rem;
-  color: #64ffda;
-  text-transform: uppercase;
-}
-main section:nth-child(2) {
-  padding: 110px 100px 0;
-  margin-bottom: 200px;
-}
-main section:nth-child(2) .title {
+main section .title {
   display: flex;
+  margin-top: 100px;
   margin-bottom: 50px;
 }
-main section:nth-child(2) .title h3 {
+main section .title h1 {
   color: white;
   text-transform: uppercase;
   font-size: 6rem;
   position: relative;
   white-space: nowrap; /* empêche le texte de passer à la ligne */
 }
-main section:nth-child(2) .title h3::after {
+main section .title h1::after {
   transition: all 0.1s ease-in-out;
   content: "";
   position: absolute;
@@ -260,102 +212,56 @@ main section:nth-child(2) .title h3::after {
   left: -1%;
   background: linear-gradient(180deg, #d87f2c 100%, #f3f3f3 100%, rgba(255, 209, 0, 0) 100%);
 }
-main section:nth-child(2) .test {
+main section .wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-main section:nth-child(2) .test .wrapper {
-  max-width: 1100px;
-  width: 100%;
+main section .wrapper ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+main section .wrapper ul:hover img {
+  filter: grayscale(1);
+}
+main section .wrapper ul li {
+  width: 400px;
+  padding: 5px;
+}
+main section .wrapper ul li a div {
+  padding: 20px;
   position: relative;
+  overflow: hidden;
 }
-main section:nth-child(2) .test .wrapper i {
-  top: 50%;
-  height: 50px;
-  width: 50px;
-  cursor: pointer;
-  font-size: 1.25rem;
-  position: absolute;
-  text-align: center;
-  line-height: 50px;
-  background: #fff;
-  border-radius: 50%;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
-  transform: translateY(-50%);
-  transition: transform 0.1s linear;
+main section .wrapper ul li a div:hover img {
+  opacity: 0.5;
+  filter: grayscale(0);
+  transform: scale(1.1);
+  transition: 0.3s;
 }
-main section:nth-child(2) .test .wrapper i:active {
-  transform: translateY(-50%) scale(0.85);
-}
-main section:nth-child(2) .test .wrapper i:first-child {
-  left: -52px;
-}
-main section:nth-child(2) .test .wrapper i:last-child {
-  right: -52px;
-}
-main section:nth-child(2) .test .wrapper ul {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: calc(33.3333333333% - 12px);
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  border-radius: 8px;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-}
-main section:nth-child(2) .test .wrapper ul li {
-  scroll-snap-align: start;
-  list-style: none;
-  cursor: pointer;
-  flex-direction: column;
-  border-radius: 8px;
-}
-main section:nth-child(2) .test .wrapper ul li a {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-main section:nth-child(2) .test .wrapper ul li a div {
-  width: 300px;
-  height: 200px;
-  margin-bottom: 20px;
-}
-main section:nth-child(2) .test .wrapper ul li a div img {
+main section .wrapper ul li a div img {
   width: 100%;
-  height: 100%;
   object-fit: cover;
+  transition: 0.3s;
 }
-main section:nth-child(2) .test .wrapper ul li a span {
-  color: #ffffff;
-  font-size: 1.31rem;
+main section .wrapper ul li a div p {
+  white-space: nowrap;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  color: white;
   font-family: "Poppins", sans-serif;
-  margin-bottom: 5px;
+  font-weight: 300;
+  font-size: 2rem;
+  transition: 0.3s;
+  transform: translate(-50%, -50%);
 }
-main section:nth-child(2) .test .wrapper ul li a p {
-  font-family: "Roboto Mono", monospace;
-  color: rgb(191, 191, 191);
-  text-transform: uppercase;
-}
-main section:nth-child(2) .test .wrapper ul::-webkit-scrollbar {
-  display: none;
-}
-main section:nth-child(2) .test .wrapper ul.no-transition {
-  scroll-behavior: auto;
-}
-main section:nth-child(2) .test .wrapper ul.dragging {
-  scroll-snap-type: none;
-  scroll-behavior: auto;
-}
-main section:nth-child(2) .test .wrapper ul.dragging .card {
-  cursor: grab;
-  user-select: none;
-}
-main section:nth-child(2) .test .wrapper ul :where(.card, .img) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+main section .wrapper ul li a div:hover p {
+  opacity: 1;
+  transition: 0.3s;
 }
 
 footer {
@@ -363,20 +269,21 @@ footer {
   height: 100%;
 }
 footer .title {
+  justify-content: center;
   display: flex;
   margin-bottom: 100px;
   max-width: 1400px;
   margin: 0 auto 100px;
   padding-left: 10px;
 }
-footer .title h3 {
+footer .title h2 {
   color: white;
   text-transform: uppercase;
   font-size: 6rem;
   position: relative;
   white-space: nowrap; /* empêche le texte de passer à la ligne */
 }
-footer .title h3::after {
+footer .title h2::after {
   transition: all 0.1s ease-in-out;
   content: "";
   position: absolute;
