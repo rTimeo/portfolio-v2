@@ -1,0 +1,158 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+
+    font-family: 'Inter', sans-serif;
+}
+body{
+    background-color: #1B1D29;
+
+}
+
+
+/**/
+main{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    height: 100vh;
+
+}
+hr{
+    position: fixed;
+    height: 100vh;
+    left: 40%;
+    animation: hr 0.65s cubic-bezier(.694,.048,.335,1);
+
+}
+@keyframes hr {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 100%;
+    }
+}
+
+
+#left div{
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 150px;
+    left: 50px;
+}
+
+h1{
+    position: relative;
+    font-size: 48px;
+    color: rgb(226 232 240);
+    margin-bottom: 10px;
+    width: max-content;
+    font-weight: 700;
+}
+#left p{
+    position: relative;
+    color: rgb(226 232 240);
+    font-size: 20px;
+    font-weight: 500;
+    width: max-content;
+    margin-bottom: 60px;
+}
+h1::after {
+    content: ""; 
+    background-color: white; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    height: 100%; 
+    z-index: 1; 
+    animation: reduction 0.65s cubic-bezier(.694,.048,.335,1);
+
+}
+/**/
+#left p::after {
+    content: ""; 
+    background-color: white; 
+    position: absolute; 
+    top: 0;
+    left: 0; 
+    height: 100%; 
+    z-index: 1; 
+    animation: reduction 1s cubic-bezier(.694,.048,.335,1); 
+}
+
+@keyframes reduction {
+    0% {
+        width: 100%;
+        left: 0;
+    }
+    100% {
+        width: 0;
+        left: 100%;
+    }
+}
+
+    #left ul{
+        height: 100%;
+        display: flex;
+        gap: 20px;
+        margin-bottom: 120px;
+        position: relative;
+        width: max-content;
+    }
+    #left ul::after{
+        content: ""; 
+        background-color: white;
+        position: absolute;
+        bottom: 0; 
+        left: 0; 
+        height: 10%; 
+        z-index: 1; 
+        animation: reduction 1.35s cubic-bezier(.694,.048,.335,1);
+    }
+
+        #left ul li{
+            align-self: flex-end;
+        }
+
+            #left svg{
+                width: 25px;    
+                fill: #94A2B8;
+                height: auto;
+            }
+
+            svg:hover{
+                fill: rgb(255, 255, 255);
+            }
+
+
+
+#right{
+    width: 60vw;
+}
+
+    #right ul{
+        margin-top: 100px;
+        margin-bottom: 100px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 100px;
+    }
+
+        #right ul li a{
+            display: block;
+            width: 400px ;
+        }
+
+            #right img{
+                width: 100%;
+                box-shadow: rgba(0, 0, 0, 0.69) 0px 26px 30px -10px, rgba(0, 0, 0, 0.73) 0px 16px 10px -10px;
+            }
