@@ -55,6 +55,7 @@ h1{
     font-size: 20px;
     font-weight: 500;
     width: max-content;
+    padding-left: 10px;
 }
 h1::after {
     content: ""; 
@@ -173,3 +174,45 @@ span{
 #right li:hover div{
     bottom: -35px;
 }
+
+@media only screen and (max-width: 600px) {
+    main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        position: relative;
+        height: 100%;
+    
+    }
+
+
+#left div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+position:static;    gap: 30px;
+
+}
+    
+#right{
+    width: 100vw;
+}
+#left{
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#right ul li a{
+    width: 80% ;
+}
+#right ul li{
+
+    display: flex;
+    justify-content: center;
+}
+
+
+  }
